@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default ">
+<nav class="navbar navbar-default navbar-fixed-top ">
   <div class="container-fluid">
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -28,11 +28,11 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Profile</a></li>
+              <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;Profile</a></li>
               <li class="divider"></li>
-              <li><a href="{{route('new_blog')}}">Write New Topic</a></li>
+              <li><a href="{{route('new_blog')}}"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>&nbsp;Write New Topic</a></li>
               <li class="divider"></li>
-              <li><a href="{{route('logout')}}">Logout</a></li>
+              <li><a href="{{route('logout')}}"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>&nbsp;Logout</a></li>
             </ul>
           </li>
           @else

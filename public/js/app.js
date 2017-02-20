@@ -41,7 +41,7 @@ $('#comment').on('submit',function(e){
           else{
             $('#total-comments commmentCount').html(+resp.total_comments);
              $(".comments-box").append(''+
-                '<div class="col-md-8 col-md-offset-2 clear" comment-id="'+resp.comment_id+'">'+
+                '<div class="col-md-8 col-md-offset-2 clear comment_row" comment-id="'+resp.comment_id+'">'+
                   '<div class="for-edit"></div>'+
                   '<div class="for-view">'+
                     '<div class="pull-left">'+

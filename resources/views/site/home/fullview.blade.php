@@ -14,7 +14,7 @@
 				<h6><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 					&nbsp;{{$post->user->name}}</h6>
 				</div>
-				<div class="col-md-8 col-md-offset-2">
+				<div class="col-md-8 col-md-offset-2 alignment ">
 					<div class="thumbnail">
 						<img src="{{asset('public/images/'.$post->image)}}" class="img-responsive" alt="{{$post->title}}" width="100%">
 						<div class="caption">
@@ -23,7 +23,7 @@
 					</div>
 					<h3><span class="glyphicon glyphicon-thumbs-up" id="like" url="{{route('like')}}" value="{{encrypt($post->id)}}">&nbsp;{{count($post->likes)}}</span>&nbsp;
 						&nbsp; &nbsp; <span class="glyphicon glyphicon-comment" id="total-comments">&nbsp;<commmentCount>{{count($post->comments)}}</commmentCount> comments</span> &nbsp;
-						&nbsp;&nbsp;<span class="glyphicon glyphicon-time"></span>&nbsp; {{$post->updated_at}}
+						&nbsp;&nbsp;<span class="glyphicon glyphicon-time"></span>&nbsp; {{date('Y-m-d',strtotime($post->updated_at))}}
 					</h3>
 				</div>
 				<div class="comments-box">
@@ -56,12 +56,12 @@
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<input type="hidden" name="post_id" value="{{$post->id}}">
 					<div class="col-md-8 col-md-offset-2 form-group" id="comment-input-div">      
-						<input type="text" class="form-control input-lg" id="comment-input" name="comment" placeholder="Write comment here.. " value="{{ old('comment') }}">
+						<input type="text" class="form-control input-lg" id="comment-input" name="comment" placeholder="Write a comment here.. " value="{{ old('comment') }}">
 					</div>
 				</form>
 				@else
 				<div class="col-md-8 col-md-offset-2 form-group">      
-					<input type="text" class="form-control input-lg" id="name" name="comment" placeholder="Write comment here.. " disabled="true">
+					<input type="text" class="form-control input-lg" id="name" name="comment" placeholder="Write a comment here.. " disabled="true">
 				</div>
 				@endif
 			</form>

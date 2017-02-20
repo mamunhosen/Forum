@@ -53,4 +53,5 @@ class Post extends Model
     {
         return $query->where('id', '=', $post_id);
     }
+ 
 }
