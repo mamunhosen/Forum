@@ -17,11 +17,11 @@
           <li><a href="#">ABOUT</a></li>
           <li><a href="#">CONTACT US</a></li>
         </ul>
-        <form class="navbar-form navbar-left">
+        <form class="navbar-form navbar-left" method="get" action="{{route('home')}}" id="searchForm">
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Search" name="search">
           </div>
-          <button type="submit" class="btn btn-default">Go</button>
+          <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
         </form>
         <ul class="nav navbar-nav navbar-right">
           @if(Auth::check())

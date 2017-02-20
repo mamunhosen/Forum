@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Request;
 use App\Http\Requests;
 use App\Post;
 use App\Comment;
@@ -12,8 +12,17 @@ class HomeController extends Controller
 {
     public function index()
     {
-       $rows=Post::with('comments','user','category','likes')->orderBy('updated_at','desc')->paginate(3);
+      $search=(Request::get('search'))?Request::get('search'):'';
+       $rows=Post::with('comments','user','category','likes')
+       ->where('title','LIKE','%'.$search.'%')
+       ->orWhere('content','LIKE','%'.$search.'%')
+       ->orWhereHas('user', function ($query) use ($search) {
+        $query->where('name', 'LIKE', '%'.$search.'%');})
+       ->orWhereHas('category', function ($query) use ($search) {
+        $query->where('name', 'LIKE', '%'.$search.'%');})
+       ->orderBy('updated_at','desc')->paginate(3);
        return view('site.home.home',compact('rows'));
+
     }
     /**
     *Single post view

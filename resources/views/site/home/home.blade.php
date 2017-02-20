@@ -13,7 +13,7 @@
 			<div class="col-md-8 ">
 				<h4><a href="{{url('fullview/'.encrypt($row->id))}}">{{$row->title}}</a></h4>
 				<p><strong><span class="glyphicon glyphicon-user"></span>&nbsp;{{$row->user->name}}
-					&nbsp; <span class="glyphicon glyphicon-time"></span> {{date('Y-m-d',strtotime($row->updated_at))}}
+					&nbsp; <span class="glyphicon glyphicon-time"></span> {{$row->updated_at}}
 					&nbsp; <span class="glyphicon glyphicon-comment"></span> {{count($row->comments)}} comments
 					&nbsp;<span class="glyphicon glyphicon-thumbs-up"></span> {{count($row->likes)}}
 				</strong></p>

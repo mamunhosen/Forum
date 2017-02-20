@@ -47,11 +47,12 @@ class Post extends Model
     	return $this->hasMany('App\Like');
     }
     /**
-    *
+    *filtering based on ID
     */
     public function scopeID($query,$post_id)
     {
         return $query->where('id', '=', $post_id);
     }
+
  
 }

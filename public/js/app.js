@@ -17,9 +17,16 @@ $(document).ready(function(){
         }
     });
    });
+   $('#searchForm').on('submit',function(e){
+       search_word=$('input[name=search]').val();
+       if(search_word==''){
+         return false;
+       }
+       
+   });
 });
 
-$(function(){
+$(document).ready(function(){
 $('#comment').on('submit',function(e){
     token = $('input[name=_token]').val();
     url=$(this).attr('action');

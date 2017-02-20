@@ -23,7 +23,7 @@
 					</div>
 					<h3><span class="glyphicon glyphicon-thumbs-up" id="like" url="{{route('like')}}" value="{{encrypt($post->id)}}">&nbsp;{{count($post->likes)}}</span>&nbsp;
 						&nbsp; &nbsp; <span class="glyphicon glyphicon-comment" id="total-comments">&nbsp;<commmentCount>{{count($post->comments)}}</commmentCount> comments</span> &nbsp;
-						&nbsp;&nbsp;<span class="glyphicon glyphicon-time"></span>&nbsp; {{date('Y-m-d',strtotime($post->updated_at))}}
+						&nbsp;&nbsp;<span class="glyphicon glyphicon-time"></span>&nbsp; {{$post->updated_at}}
 					</h3>
 				</div>
 				<div class="comments-box">
