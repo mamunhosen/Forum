@@ -1,4 +1,4 @@
-
+*{padding:0px;margin:0px auto;}
 .navbar-default {
   background-color: #e74c3c;
   border-color: #c0392b;
@@ -87,3 +87,30 @@
 .register{margin-top: 5px}
 }
 #like{cursor: pointer; cursor: hand;}
+.action{font-size: large;font-weight: bold;padding: 1px 4px;cursor: pointer;}
+.actionDiv{position: relative;}
+.actionType{background: #DCDCDC;position: absolute;z-index: 1;left: -43px;padding: 2px 0px 0px 0px;border-radius: 4px;top:35px;}
+.actionType::before{content: ""}
+
+.actionType #triangle-up { width: 0;
+height: 0;
+border-left: 8px solid transparent;
+border-right: 8px solid transparent;
+border-bottom: 16px solid #DCDCDC;
+position: absolute;
+top: -15px;
+left: 42%;}
+.actionType ul {list-style: none;}
+.actionType ul li {background: #a8a8a8;
+display: block;
+padding: 3px 35px;
+margin-top: 2px;
+cursor: pointer;
+transition:background .3s;
+font-size: 13px;
+}
+.actionType ul li:hover{background: grey;transition:background .4s;}
+.clear{clear:both;}
+.comment_row:hover{background: #d4d4d4;border-radius: 5px;transition: background .4s;}
+.comment_row{transition: background .3s;}
+

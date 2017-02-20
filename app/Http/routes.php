@@ -48,6 +48,8 @@ Route::group(['middleware' => 'auth'], function () {
  Route::get('/logout', [
     'as' => 'logout', 'uses' => 'Auth\AuthController@logout'
 ]);
+ Route::put('/comment/{id}',['as'=>'comment.edit','uses'=>'CommentController@edit']);
+ Route::delete('/comment/{id}',['as'=>'comment.delete','uses'=>'CommentController@delete']);
 
 });
 Route::get('user',function(){
