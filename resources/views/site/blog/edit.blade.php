@@ -24,7 +24,7 @@
 							<option value="-1">Select Category</option>
 							@if(isset($category))
 							@foreach($category as $key=>$catg)
-							<option value="{{$catg->id}}" {{old('category_id',$catg->id ==$catg->id?"selected":"" )}}>{{$catg->name}}</option>
+							<option value="{{$catg->id}}" {{old('category_id',$catg->id==$row->category_id?"selected":"" )}}>{{$catg->name}}</option>
 							@endforeach
 							@endif
 						</select>
