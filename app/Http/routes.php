@@ -50,6 +50,9 @@ Route::group(['middleware' => 'auth'], function () {
 ]);
  Route::put('/comment/{id}',['as'=>'comment.edit','uses'=>'CommentController@edit']);
  Route::delete('/comment/{id}',['as'=>'comment.delete','uses'=>'CommentController@delete']);
+ Route::delete('/post/{id}',['as'=>'post.delete','uses'=>'PostController@delete']);
+ Route::get('/post/edit/{id}',['as'=>'post.edit','uses'=>'PostController@edit']);
+ Route::post('/post/update',['as'=>'post.update','uses'=>'PostController@update']);
 
 });
 Route::get('user',function(){

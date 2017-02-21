@@ -162,6 +162,36 @@ function actionMenuShow(event){
         '</ul>'+
     "</div>");
 }
+function postDelete(token,url,redirect) {
+  $.ajax({
+        url: url,
+        headers: {'X-CSRF-TOKEN': token},
+        data: {},
+        type: 'DELETE',
+        beforeSend:function(){
+
+        },
+        success: function (resp) {
+          alert("Your post has been deleted");
+          window.location.replace(redirect);
+        }
+  });
+}
+function actionMenuShowPost(event){
+  var action_post_id=$(event).attr('action-post-id');
+  var token=$(event).attr('token');
+  var url=$(event).attr('url');
+  var edit_url=$(event).attr('edit-url');
+  var redirect=$(event).attr('redirect');
+  $(event).append(""+
+    "<div class='actionType pull-right'>"+
+      '<div id="triangle-up"></div>'+
+        '<ul>'+
+          '<li><a href="'+edit_url+'">Edit</a></li>'+
+          '<li onclick=\'postDelete("'+token+'","'+url+'","'+redirect+'")\'>Delete</li>'+
+        '</ul>'+
+    "</div>");
+}
 /*$('.action--').hover(function(event){
   var commentTotal=$('#total-comments commmentCount').html();
   
